@@ -3,6 +3,7 @@ package animalid
 import (
 	"math/rand"
 	"strings"
+	"time"
 )
 
 var (
@@ -351,6 +352,7 @@ func GetDelimitedAnimalID(delimiter string) string {
 
 func getRandIndices() (a, b, c int) {
 gen:
+	rand.Seed(time.Now().UnixNano())
 	a = rand.Intn(len(adjective))
 	b = rand.Intn(len(adjective))
 	c = rand.Intn(len(animal))
